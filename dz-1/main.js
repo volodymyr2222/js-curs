@@ -49,8 +49,7 @@ alert(info + info2);
 
 
 let info3 = prompt('');
-let info4 = 5;
-alert(info3 / info4);
+alert(info3 / 5);
 
 let info5 = confirm('klic');
 console.log(info5);
