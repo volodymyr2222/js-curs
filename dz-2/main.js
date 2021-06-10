@@ -8,54 +8,53 @@
 
 // task-2
 
-let number_one = +prompt('Введіть будь-яке число-1'), number_two = +prompt('Введіть будь-яке число-2'), sum = number_one + number_two;
+let number_one = prompt('Введіть будь-яке число-1'), number_two = prompt('Введіть будь-яке число-2'); 
+let sum = number_one + number_two;
 
-// if (sum >= 1){ 
-// } else {alert('NaN');
 
-// }
+if (sum <= 0){
 
-if (sum <= 0 ){
-    alert('введіть число більше 0');
-} else if (sum == String(sum.trim())){
-    alert('введіть число, а не букви!!!')
-} else if (sum == 0 ){
-    alert('введіть якесь значення')
-} else{
-    
-}
+    alert('введіть число, більше 0');
+} else if (sum.trim() == ""){
+    alert('введіть якесь значення');
 
-switch (sum){
+} else if (isNaN(parseInt(sum))){
+    alert('Введіть цифри, а не букви!!');
+}else{
+
+let aa = +number_one + +number_two;
+switch (aa){
     case 1:
     case 2:
     case 3:
     case 4:
-        alert("від 1  "+ sum +"  до 4")
+        alert("від 1  "+ aa +"  до 4")
         break;
     case 5:
-        alert("5 рівне "+ sum)
+        alert("5 рівне "+ aa)
         break;
     case 6:
     case 7:
     case 8:
     case 9:
-        alert("від 6  "+ sum +"  до 9")
+        alert("від 6  "+ aa +"  до 9")
         break;
     case 10:
-        alert("10 рівне " + sum)
+        alert("10 рівне " + aa)
         break;
     case 11:
     case 12:
     case 13:
     case 14:
-        alert("від 11 "+ sum +" до 14")
+        alert("від 11 "+ aa +" до 14")
     break;
     case 15:
-        alert("15 рівне " + sum)
+        alert("15 рівне " + aa)
         break;
     default:
-        alert(sum)
+        alert(aa)
 
+}
 }
 
 
