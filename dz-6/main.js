@@ -33,3 +33,25 @@ let arrSumTwo = arrSum.reduce(function(previsionValue, item){
 },0);
 
 console.log("Збільшення кожного масиву на П'ЯТЬ - ", arrSumOme, "  і на ДЕСЯТЬ - ", arrSumTwo);
+
+
+
+
+
+
+
+// ТОп 5 гірших
+// delete
+// toString
+// indexOf
+// lastindexOf
+// some
+
+// ТОп 5 ліпших
+// sort
+// flat
+// map
+// reduce
+// concat
+
+
