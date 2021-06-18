@@ -13,6 +13,20 @@ for(let i = 0; i < reverseTwo.length; i++){
 
 console.log(rev.join(''))
 
+
+var arrayA = ["h","e","l","l","o"];
+var arrayB = [];
+function copyArray(oldArray, newArray) {         
+    oldArray.forEach((item,index) => {                         
+        newArray.push(oldArray[oldArray.length-1-index]); 
+    });
+}
+
+copyArray(arrayA, arrayB);
+console.log(arrayB.join(''))
+
+
+
 //task-2 obj
 
 const obj = {
