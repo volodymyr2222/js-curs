@@ -44,3 +44,8 @@ function sortElementsByType(){
 console.log(obj)
 }
 sortElementsByType(arr);
+
+
+
+
+

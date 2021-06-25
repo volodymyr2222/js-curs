@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- <h1>player registry</h1> -->
+    <div class="containder_bloc">
+       
+        <div class="container_input">
+            <form action="/" method="dialog" id="form">
+                        <div class="block_name">
+                            <label for="name">
+                                name:
+                            <input placeholder="set name" type="text" name="name" value="">
+                            </label>
+                        </div>
+                        <div class="block_surname">
+                            <label for="surname">
+                                surname:
+                            <input placeholder="set surname" type="text" name="surname"  value="">
+                            </label>
+                        </div>
+                        <div class="block_age">
+                            <label for="age">
+                                age:
+                            <input placeholder="set age" type="number" name="age" value="">
+                            </label>
+                        </div>
+                        <div class="block_number">
+                            <label for="number">
+                                number:
+                            <input placeholder="set number" type="lel" name="number" value="">
+                            </label>
+                        </div>
+                        <div class="block_roles">
+                                ROLES:
+                            <select name="roles">
+                                <option value="goalkeeper">Goalkeeper</option>
+                                <option value="defender">Defender</option>
+                                <option value="midfielder">Midfielder</option>
+                                <option value="forward">Forward</option>
+                            </select>
+        
+                        </div>
+                        <div class="block_clean">
+                            <button type="reset">Clean</button>
+                        </div>
+                        <div class="block_button">
+                            <button onclick="submite"  type="submit">Save</button>
+                        </div>
+                        
+                        <div class="playerDelete">
+                            <label for="">
+                                <input placeholder="removal of a player by index." name="idx" type='number' value="">
+                            </label>
+                            <button onclick="playerDelete()" type="button">Remove</button>
+                            
+                        </div>
+                        
+                        
+                        <div class="playerFindByNumber">
+                            <label for="">
+                                <input placeholder="search for a player by number" name="player" type="number" value="">
+                            </label>
+                            <button onclick="playerFindByNumber()" type="button">Search for a player</button>
+                            
+                        </div>
+                        
+                        <div class="playerEdit">
+                            <label for="">
+                                <input placeholder="player editing by index" type="number" name="indexPlayer" value="">
+                            </label>
+                            <button onclick="playerEdit()" type="button">Redact</button>
+                            
+                        </div>
+                        
+                             <div class="showAllPlayers">
+                            <button onclick="showAllPlayers()" type="button">Withdraw all players</button>
+                        </div>
+            </form>
+        </div>
+        <div class="contaiter_text"></div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
