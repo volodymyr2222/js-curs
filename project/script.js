@@ -1,89 +1,102 @@
 var footbalTeam = [];
-const form = document.getElementById('form')
-// Функція добавляння гравця
+const form = document.getElementById('form');
 
-function submite(){
-  const {form} = document.forms;
-  function retrieveFormValue(event) {
+function retriveFormValue(){
 
-    event.preventDefault();
-    const formData = new FormData(form);
-    const values = Object.fromEntries(formData.entries());
-  
-    footbalTeam.push(values)
-    console.log(footbalTeam);
-   
-  }
-  form.addEventListener('submit', retrieveFormValue);  
- 
-  }
-  submite();
+    const name = form.querySelector('[name="name"]'),
+        surname = form.querySelector('[name="surname"]'),
+        age = form.querySelector('[name="age"]'),
+        number = form.querySelector('[name="number"]'),
+        roles = form.querySelector('[name="roles"]');
+    
+        const valueAll = {
+            name: name.value,
+            surname: surname.value,
+            age: age.value,
+            number: number.value,
+            roles: roles.value};
+
+            footbalTeam.push(valueAll);
+            console.log(footbalTeam);
+
+              let personNumber = form.querySelector('[name="number"]').value
+              for (let i = 0; i < footbalTeam.length - 1; i++) {
+                let obj = footbalTeam[i];
+                let valuesPersonNumber = obj.number;
+
+                if (personNumber === valuesPersonNumber) {
+                  footbalTeam.splice(footbalTeam.length - 1, 1);
+                document.querySelector('.contaiter_text').innerHTML = "A player with this number already exists!!!";
+                } else {
+                  document.querySelector('.contaiter_text').innerHTML = "Player added!!!";
+                }
+              }
+     
+}
+
 
 // Функція видалення гравця
 
 function playerDelete() {
 
-  var ind = form.querySelector('[name="idx"]')
-  var index = ind.value
-  function audit(indexx) {
-    if(indexx >= 0){
-     var b = footbalTeam.splice(index,1) 
-     document.querySelector('.contaiter_text').innerHTML = ""
+  let nameIndex = form.querySelector('[name="idx"]');
+  let index = nameIndex.value - 1;
+    if(index >= 0 && index < footbalTeam.length){
+      
+     footbalTeam.splice(index,1) ;
+     document.querySelector('.contaiter_text').innerHTML = "";
    for (key of footbalTeam){
-    let a = footbalTeam.indexOf(key);
-    document.querySelector('.contaiter_text').innerHTML += ('Player:' + a + ' -')
+    let indexOutput = footbalTeam.indexOf(key);
+    document.querySelector('.contaiter_text').innerHTML += ('Player:' + (indexOutput + 1)+  ' -');
     for (i in key){
-      document.querySelector('.contaiter_text').innerHTML += (' ' + key[i] + ' ')
+      document.querySelector('.contaiter_text').innerHTML += (' ' + key[i] + ' ');
     }
-    document.querySelector('.contaiter_text').innerHTML +=  ("<br/>")
+    document.querySelector('.contaiter_text').innerHTML +=  ("<br/>");
   } 
-  }
+ } else {
+  document.querySelector('.contaiter_text').innerHTML = "Sorry, no one is registered under this number!!!";
  }
  
- audit(index); 
  console.log(footbalTeam)
 }
 
 // Функція виводу всіх гравців
 function showAllPlayers() {
-  document.querySelector('.contaiter_text').innerHTML = ' '
+  document.querySelector('.contaiter_text').innerHTML = ' ';
 
   for(let i = 0; i < footbalTeam.length; i++){
-    console.log(footbalTeam[i])
-
+    console.log(footbalTeam[i]);
   }
-  
   for (key of footbalTeam){
-    
-    let a = footbalTeam.indexOf(key);
-    document.querySelector('.contaiter_text').innerHTML += ('Player:' + a + ' -')
+    let arrayIndex = footbalTeam.indexOf(key);
+    document.querySelector('.contaiter_text').innerHTML += ('Player:' + (arrayIndex + 1) + ' -');
     for (i in key){
-      document.querySelector('.contaiter_text').innerHTML += (' ' + key[i] + ' ')
+      document.querySelector('.contaiter_text').innerHTML += (' ' + key[i] + ' ');
     }
-    document.querySelector('.contaiter_text').innerHTML +=  ("<br/>")
+    document.querySelector('.contaiter_text').innerHTML +=  ("<br/>");
   }
 
 }
 // Функція пошуку гравців по номеру 
-function playerFindByNumber(playerNumber) {
-
-      // const {form} = document.forms;
-      var ind = form.querySelector('[name="player"]')
-      var playerNumber = ind.value
+function playerFindByNumber() {
+      let valuePlayer = form.querySelector('[name="player"]');
+      let playerNumber = valuePlayer.value;
       
-      var filter = footbalTeam.filter((item,index) =>{
-        return item.number === playerNumber
-      }).forEach((item,index) => {
-        console.log(item)
-        let a = footbalTeam.indexOf(key);
-      
-      document.querySelector('.contaiter_text').innerHTML = ''
-      document.querySelector('.contaiter_text').innerHTML += ('Player:' + a)
+      footbalTeam.filter((item) =>{
+        if (item.number === playerNumber){
+        return item.number === playerNumber;
+        } else {
+          document.querySelector('.contaiter_text').innerHTML = "Sorry, no one is registered under this number!!!";
+        }
+      }).forEach((item) => {
+        console.log(item);
+      document.querySelector('.contaiter_text').innerHTML = '';
+      document.querySelector('.contaiter_text').innerHTML += ('Player:' + " -");
             for (i in item) {
-                document.querySelector('.contaiter_text').innerHTML += (" " + ' ' + item[i] + '')
-                
+                document.querySelector('.contaiter_text').innerHTML += (" " + ' ' + item[i] + '');   
             }
-      })   
+      })
+    
 }
 
 // Функція редагування гравця 
@@ -95,28 +108,32 @@ function playerEdit() {
         number = form.querySelector('[name="number"]'),
         roles = form.querySelector('[name="roles"]');
     
-        const val = {
+        const valueAll = {
             name: name.value,
             surname: surname.value,
             age: age.value,
             number: number.value,
             roles: roles.value,
-            }
+            };
       
-          var ind = form.querySelector('[name="indexPlayer"]')
-          var index = ind.value
-          
-          let a  =  footbalTeam.splice(index,1,val)
-          let b = a[0]
-          console.log(a)
-          
-          document.querySelector('.contaiter_text').innerHTML = ''
-          document.querySelector('.contaiter_text').innerHTML += ('Player:' + ' -')
-            for (i in b) {
-                document.querySelector('.contaiter_text').innerHTML += (" " + ' ' + b[i] + '')
+          let valueIndexPlayer = form.querySelector('[name="indexPlayer"]');
+          let index = valueIndexPlayer.value - 1;
+
+          if(index >= 0 && index < footbalTeam.length){
+
+          footbalTeam.splice(index,1,valueAll);
+          let editItem = footbalTeam[index];
+          document.querySelector('.contaiter_text').innerHTML = '';
+          document.querySelector('.contaiter_text').innerHTML += ('Player:' +  ' -');
+            for (i in editItem) {
+                document.querySelector('.contaiter_text').innerHTML += (" " + ' ' + editItem[i] + '');
                 
             }
+          } else {
+            document.querySelector('.contaiter_text').innerHTML = "Sorry, no one is registered under this number!!!";
+           }
 }
+
 
 
 

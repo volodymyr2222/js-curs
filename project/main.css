@@ -13,7 +13,7 @@ body{
 .container_input {
     height: 800px;
     width: 25%;
-    background-color: rgba(57, 93, 170, 0.645);
+    background-color: rgba(0, 0, 0, 0.645);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,6 +25,7 @@ label{
     font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
+    color: white;
     
 }
  label input {
@@ -64,6 +65,7 @@ margin: 3px 0;
 .block_roles {
     font-size: 25px;
     font-weight: 700;
+    color: white;
 
 }
 .block_roles select{
@@ -92,16 +94,16 @@ margin: 3px 0;
 }
 .contaiter_text {
 width: 40%;
-height: 800px;
-background-color: rgba(56, 58, 50, 0.905);
+height: 778px;
+background-color: rgba(0, 0, 0, 0.795);
 word-wrap: break-word;
-font-size: 25px;
+font-size: 30px;
 text-align: center;
 line-height: 35px;
 word-spacing: 5px;
 padding-top: 20px;
 overflow: auto;
-color: rgb(212, 196, 196);
+color: rgb(255, 255, 255);
 }
 
 .container_input button{
@@ -125,12 +127,3 @@ button:active{
     box-shadow: 2px 2px 2px 2px rgb(67, 48, 20);
 }
 
-/* h1{
-    position:absolute;
-    text-decoration: underline;
-    text-transform: uppercase;
-    color: white;
-    left: 50%;
-    transform:translate(-50%, -50%);
-    
-} */
