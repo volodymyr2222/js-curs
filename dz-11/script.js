@@ -12,6 +12,7 @@
 
 // const arr = ['vova','petro','io'];
 
+
 // function sort(arr, fn){
 //     const newArr = [];
 //     for(let i = 0; i < arr.length; i++){
@@ -42,12 +43,12 @@
 
 
 // side
-
-//  function sum (a = prompt('')){
+// let a = prompt('');
+//  function sum (){
 //     return a * 5;
 // }
-// console.log(sum())
-// console.log(sum())
+// console.log(sum());
+// console.log(sum());
 
 
 // клоужер
@@ -135,15 +136,15 @@
 
 // замикання 
 
-function sum () { 
-  return function (arr){
-     for (let i = 0; i <= arr.length; i++) {
-    if (i % 2 != 0) {
-      console.log(i + 5)
-    }
-  }
-  }
-}
-let result = sum();
-let result2 = result([1,2,3,4,5]);
+// function sum () { 
+//   return function (arr){
+//      for (let i = 0; i <= arr.length; i++) {
+//     if (i % 2 != 0) {
+//       console.log(i + 5)
+//     }
+//   }
+//   }
+// }
+// let result = sum();
+// let result2 = result([1,2,3,4,5]);
 
