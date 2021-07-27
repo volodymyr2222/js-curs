@@ -17,7 +17,7 @@ class Triangle extends GeometricFigure{
         
     }
     toString(){
-        return this.constructor.name
+        return this.constructor.name;
     };
 }
 let triangle = new Triangle(20,20,20);
@@ -31,7 +31,7 @@ class Square extends GeometricFigure{
         return this.a * this.a;
     };
     toString(){
-        return this.constructor.name
+        return this.constructor.name;
     };
 }
 let square = new Square(20);
@@ -43,22 +43,25 @@ class Circle extends GeometricFigure{
     }
     getArea(){
         let a = Math.PI * this.r;
-        return parseFloat(a.toFixed())
+        return parseFloat(a.toFixed());
     }
     toString(){
-        return this.constructor.name
+        return this.constructor.name;
     };
 }
 let circle = new Circle(20);
-
 let arr = [triangle, square, circle];
 
+function handleFigures(arr){
 let result = arr.reduce((acc,curr) => {
     if(curr instanceof GeometricFigure){
         console.log(`${curr} - ${curr.getArea()}`);
 }
 
-return acc + curr.getArea()
+return acc + curr.getArea();
 },0);
 
 console.log(result);
+}
+
+handleFigures(arr);

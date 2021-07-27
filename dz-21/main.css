@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.block{
+    width: 100%;
+    height: 80px;
+    background-color: sandybrown;
+    font-size: 20px;
+}
+
+.block2{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(128, 128, 128);
+    font-size: 20px;
+}
+
+.block3{
+    width: 100%;
+    height: 80px;
+    background-color: rgb(218, 242, 111);
+    font-size: 25px;
+}
